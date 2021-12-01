@@ -45,7 +45,6 @@ export default {
       });
     },
     refreshAppList() {
-      console.log(process.env.VUE_APP_FLAG);
       Service.get('refreshAppList', () => {
         this.copyApk();
       });
@@ -55,7 +54,6 @@ export default {
     }
   },
   mounted() {
-    console.log(process.env.NODE_ENV);
     this.loadFileList();
   }
 }

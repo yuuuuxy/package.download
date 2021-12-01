@@ -37,7 +37,7 @@
       />
     </svg>
     <div>{{ item.fileName }}</div>
-    <div style="font-size:10px">{{ formatDate(item.ctime, 'yyyy-MM-dd hh:mm:ss') }}</div>
+    <div style="font-size:10px">{{ formatDate(item.birthtime, 'yyyy-MM-dd hh:mm:ss') }}</div>
   </div>
 </template>
 <script>

@@ -26,7 +26,8 @@ export default {
   },
   watch: {
     filesNameArray: function (val) {
-      this.filesNameArray = val
+      this.filesNameArray = val;
+      //
     }
   },
   props: {

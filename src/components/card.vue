@@ -36,7 +36,7 @@
         p-id="6806"
       />
     </svg>
-    <div>{{ item.fileName }}</div>
+    <div class="file-name" title="{{ item.fileName }}">{{ item.fileName }}</div>
     <div style="font-size:10px">{{ formatDate(item.birthtime, 'yyyy-MM-dd hh:mm:ss') }}</div>
   </div>
 </template>
@@ -108,5 +108,12 @@ export default {
   box-shadow: 10px 10px 10px lightblue;
   padding: 10px;
   margin: 10px;
+}
+.file-name {
+  width: 100px;
+    white-space: pre;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 75px;
 }
 </style>

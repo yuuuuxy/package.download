@@ -2,6 +2,7 @@
   <div>
     <el-button @click="refreshAppList()" type="primary" plain>fetch apk</el-button>
     <el-button v-if="mode" @click="restartNode()" type="primary" plain>start access to new world</el-button>
+    <el-button @click="deleteApk()" type="primary" plain>delete apk</el-button>
     <el-button @click="loadFileList()" type="primary" plain>refresh list</el-button>
     <br />
     <Card v-for="(item,index) of filesNameArray" :key="index" :item="item"></Card>
@@ -39,7 +40,7 @@ export default {
     },
     loadFileList() {
       Service.get('filename', (res) => {
-        this.$data.filesNameArray = res.data.filter(ite => ite.fileName.indexOf('.apk') !== -1);
+        this.$data.filesNameArray = res.data.filter(ite => ite.fileName.indexOf('.apk') !== -1 ||ite.fileName.indexOf('.exe') !== -1);
       }, () => {
         this.$data.filesNameArray = [];
       });
@@ -51,6 +52,9 @@ export default {
     },
     restartNode() {
       Service.get('startnode', () => { });
+    },
+    deleteApk() {
+      Service.get('deleteApk', () => { this.loadFileList()});
     }
   },
   mounted() {

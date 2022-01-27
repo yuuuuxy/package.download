@@ -30,19 +30,19 @@ export default {
     generateByDate() {
       let startDate = new Date(this.$data.dataRangeStart);
       let endDate = new Date();
-      while (!isSameDay(startDate, endDate)) {
-        let 
-        setTimeout(() => {
+      // while (!isSameDay(startDate, endDate)) {
+      //   let 
+      //   setTimeout(() => {
           
-        }, Math.floor(Math.random()*10000));
-        let date = format(startDate, 'yyyy-MM-dd');
-        // console.log(date);
-        let ele = document.createElement('a');
+      //   }, Math.floor(Math.random()*10000));
+      //   let date = format(startDate, 'yyyy-MM-dd');
+      //   // console.log(date);
+      //   let ele = document.createElement('a');
         
-        console.log( ele.href);
-        // ele.click();
-        startDate = addDays(startDate, 1);
-      }
+      //   console.log( ele.href);
+      //   // ele.click();
+      //   startDate = addDays(startDate, 1);
+      // }
     },
     dateChange(eve) {
       // console.log(eve);

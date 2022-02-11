@@ -48,7 +48,7 @@ export default {
     },
     refreshAppList() {
       Service.get('refreshAppList', () => {
-        this.copyApk();
+        this.loadFileList();
       });
     },
     restartNode() {

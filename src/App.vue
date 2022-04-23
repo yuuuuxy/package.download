@@ -31,6 +31,7 @@ export default {
   },
   setup(props) {
     const { proxy } = getCurrentInstance();
+    const r = 10;
     const routers = ref(proxy.$router.options.routes);
     return {
       routers

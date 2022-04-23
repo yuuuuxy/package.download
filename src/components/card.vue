@@ -1,5 +1,5 @@
 <template>
-  <div class="file" @click="download(item.fileName)">
+  <div class="file" @click="download(item.fileName)" @mouseenter="$emit('change',item.fileName)">
     <svg
       t="1635933272239"
       class="icon"
@@ -48,6 +48,9 @@ export default {
   props: {
     item: Object
   },
+  emits:[
+    // 'change'
+  ],
   methods: {
     download: (name) => {
       const aEle = document.createElement('a');
@@ -90,9 +93,14 @@ export default {
         }
       }
       return format;
+      }
+    ,
+    changeState:()=>{
+    }
     },
-
-  }
+    setup(props,ctx) {
+      
+    }
 }
 </script>
 <style scoped>

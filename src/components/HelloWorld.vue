@@ -5,7 +5,8 @@
     <el-button @click="deleteApk()" type="primary" plain>delete apk</el-button>
     <el-button @click="loadFileList()" type="primary" plain>refresh list</el-button>
     <br />
-    <Card v-for="(item,index) of filesNameArray" :key="index" :item="item"></Card>
+    <Card v-for="(item,index) of filesNameArray" :key="index" :item="item" @change="onchange">
+    </Card>
   </div>
 </template>
 
@@ -56,6 +57,9 @@ export default {
     },
     deleteApk() {
       Service.get('deleteApk', () => { this.loadFileList()});
+    },
+    onchange(eve){
+      console.log('%c重点输出','background:pink;color:white;padding:5px;border:1px dashed pink;border-radius:5px',eve);
     }
   },
   mounted() {

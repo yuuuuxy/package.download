@@ -1,30 +1,22 @@
 <template>
-  <div style>
-    <div class="block">
-      <textarea id="text" :value="value" @dblclick="getValue" />
-      <button
-        class="btn"
-        data-clipboard-action="cut"
-        :data-clipboard-text="value"
-        @click="getValue()"
-      >{{ value }}</button>
-    </div>
-    <div class="block afterr">
-      <div style="width: 200px;border: 1px solid green;">
-        <div style="height:200px;border: 1px solid red;float: left;width: 100px;"></div>
-      </div>
-    </div>
+  <div>
+    <el-button @click="toNormal">
+      去Normal
+    </el-button>
   </div>
+  
 </template>
 <script>
 import Service from './service.vue';
 // import { getCurrentInstance, ref } from 'vue';
 import ClipboardJS from 'clipboard';
+import {useRouter} from 'vue-router';
 export default {
   name: '',
   data() {
     return {
       fileList: [],
+      router,
       value: `new File(['%', '3', 'C', 'p', '%', '3', 'E', 'c', 'o', 'p', 'y', '%', '3', 'C', '/', 'p', '%', '3', 'E'],'name')`,
     }
   },
@@ -36,6 +28,13 @@ export default {
       // const { proxy } = getCurrentInstance();
       // let _this = this;
 
+    },
+    toNormal(){
+      this.router.push('/normal',{
+        query:{
+          id:18
+        }
+      })
     }
   },
   mounted() {
@@ -50,7 +49,12 @@ export default {
     // Service.get('copyData', (res) => {
     //   this.value = res.data;
     // });
-  }
+  },
+  setup(){
+      this.router = useRouter()
+
+      // router.push('/normal')
+}
 }
 </script>
 <style lang="scss" scoped>

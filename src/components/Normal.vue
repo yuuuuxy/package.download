@@ -1,27 +1,26 @@
 <template>
   <div>
-    <!-- <el-date-picker
-      v-model="dateRange"
-      type="date"
-      range-separator="To"
-      start-placeholder="Start date"
-      end-placeholder="End date"
-    ></el-date-picker>-->
-    <input type="date" v-model="dataRangeStart" />
-    <el-input v-model="key"></el-input>
-    <el-button @click="generate()">generate</el-button>
+    normal
+    <!-- <input type="date" v-model="dataRangeStart" />
+    <el-input :="key"></el-input>
+    <el-button @click="generate()">generate</el-button> -->
+    <div class="nn">
+      <div>
+        nn
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import { addDays, isSameDay, format } from 'date-fns';
+import { addDays, isSameDay, format } from "date-fns";
 export default {
-  name: 'Normal',
+  name: "Normal",
   data() {
     return {
-      key: '11',
+      key: "11",
       dataRangeStart: new Date(),
-    }
+    };
   },
   methods: {
     generate() {
@@ -31,14 +30,14 @@ export default {
       let startDate = new Date(this.$data.dataRangeStart);
       let endDate = new Date();
       // while (!isSameDay(startDate, endDate)) {
-      //   let 
+      //   let
       //   setTimeout(() => {
-          
+
       //   }, Math.floor(Math.random()*10000));
       //   let date = format(startDate, 'yyyy-MM-dd');
       //   // console.log(date);
       //   let ele = document.createElement('a');
-        
+
       //   console.log( ele.href);
       //   // ele.click();
       //   startDate = addDays(startDate, 1);
@@ -46,7 +45,7 @@ export default {
     },
     dateChange(eve) {
       // console.log(eve);
-    }
+    },
   },
   // setup(props) {
   //   const key = '122';
@@ -64,8 +63,25 @@ export default {
   //   }
   //   return { key, dateRange, generate }
   // },
-}
+};
 </script>
 
-<style>
+<style lang="scss">
+@media screen {
+}
+@function px2rem($px) {
+  $item: 37.5px;
+	@return 2rem;
+}
+html {
+  font-size: 100px;
+}
+
+.nn {
+  > div {
+    height: px2rem(100px);
+    width: 100px;
+    border: 1px solid lightblue;
+  }
+}
 </style>

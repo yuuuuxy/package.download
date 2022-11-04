@@ -16,7 +16,7 @@ export default {
   data() {
     return {
       fileList: [],
-      router,
+      // router,
       value: `new File(['%', '3', 'C', 'p', '%', '3', 'E', 'c', 'o', 'p', 'y', '%', '3', 'C', '/', 'p', '%', '3', 'E'],'name')`,
     }
   },

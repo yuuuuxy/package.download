@@ -2,7 +2,7 @@
   <div class="app">
     <el-menu
       style="height:100px"
-      :default-active="'0'"
+      default-active="2"
       class="el-menu-demo"
       mode="horizontal"
       background-color="#545c64"
@@ -10,7 +10,7 @@
       active-text-color="#ffd04b"
     >
       <el-menu-item v-for="(item,index) of routers" :key="index" :index="index">
-        <router-link
+        <router-link v-if="item.path!=='/'"
           style="text-decoration:none;height:100%;display:block;width:100%"
           :to="item.path"
         >{{ item.name }}</router-link>

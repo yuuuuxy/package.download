@@ -8,7 +8,7 @@ import Normal from './components/Normal'
 import { createRouter, createWebHashHistory } from 'vue-router';
 
 const routes = [
-
+  { path:'/',redirect: 'home' },
   { path: '/test', name: 'Test', component: Test },
   {
     path: '/home', name: 'Home', component: HelloWorld, prodShow: process.env.NODE_ENV === 'production'

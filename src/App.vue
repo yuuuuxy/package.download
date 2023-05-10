@@ -10,7 +10,7 @@
       active-text-color="#ffd04b"
     >
       <el-menu-item v-for="(item,index) of routers" :key="index" :index="index">
-        <router-link v-if="item.path!=='/'"
+        <router-link v-if="item.path!=='/' && (item.auth.includes(mode))"
           style="text-decoration:none;height:100%;display:block;width:100%"
           :to="item.path"
         >{{ item.name }}</router-link>
@@ -28,6 +28,11 @@ export default {
   name: 'App',
   components: {
     Home
+  },
+  data() {
+    return {
+      mode: process.env.NODE_ENV
+    }
   },
   setup(props) {
     const { proxy } = getCurrentInstance();

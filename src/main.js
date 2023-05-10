@@ -9,12 +9,12 @@ import { createRouter, createWebHashHistory } from 'vue-router';
 
 const routes = [
   { path:'/',redirect: 'home' },
-  { path: '/test', name: 'Test', component: Test },
+  { path: '/test', name: 'Test', component: Test, auth: ['development'] },
   {
-    path: '/home', name: 'Home', component: HelloWorld, prodShow: process.env.NODE_ENV === 'production'
+    path: '/home', name: 'Home', component: HelloWorld, auth: ['production','development']
   },
   {
-    path: '/normal', name: 'Normal', component: Normal
+    path: '/normal', name: 'Normal', component: Normal, auth: ['development']
   }
 ];
 

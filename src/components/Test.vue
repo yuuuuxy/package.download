@@ -10,7 +10,7 @@
 import Service from './service.vue';
 // import { getCurrentInstance, ref } from 'vue';
 import ClipboardJS from 'clipboard';
-import {useRouter} from 'vue-router';
+// import {useRouter} from 'vue-router';
 export default {
   name: '',
   data() {
@@ -30,11 +30,11 @@ export default {
 
     },
     toNormal(){
-      this.router.push('/normal',{
-        query:{
-          id:18
-        }
-      })
+      // this.router.push('/normal',{
+      //   query:{
+      //     id:18
+      //   }
+      // })
     }
   },
   mounted() {
@@ -51,7 +51,7 @@ export default {
     // });
   },
   setup(){
-      this.router = useRouter()
+      // this.router = useRouter()
 
       // router.push('/normal')
 }

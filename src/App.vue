@@ -5,19 +5,18 @@
       :default-active="'0'"
       class="el-menu-demo"
       mode="horizontal"
-      @select="handleSelect"
       background-color="#545c64"
       text-color="#fff"
       active-text-color="#ffd04b"
     >
       <el-menu-item v-for="(item,index) of routers" :key="index" :index="index">
         <router-link
-          style="text-decoration:none;height:100%;display:block"
+          style="text-decoration:none;height:100%;display:block;width:100%"
           :to="item.path"
         >{{ item.name }}</router-link>
       </el-menu-item>
     </el-menu>
-    <router-view style="height:calc(100% - 100px);overflow-y:auto"></router-view>
+    <router-view style="height:calc(100% - 100px);overflow-y:auto;margin:0 auto"></router-view>
   </div>
 </template>
 
@@ -54,5 +53,11 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
   height: 100%;
+}
+li>a {
+  padding: 0 20px;
+}
+li {
+  padding: 0 !important;
 }
 </style>

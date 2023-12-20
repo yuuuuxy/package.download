@@ -4,7 +4,13 @@
   </div>
 </template>
 <script >
-export default {};
+export default {
+  data:()=>{
+    return {
+      obk:'sss'
+    }
+  }
+};
 </script>
 <style lang="scss" scoped>
 .container {

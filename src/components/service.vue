@@ -4,7 +4,7 @@ import Message from './Message.vue';
 
 
 const api = axios.create({
-  baseURL: `http://${document.domain}:8080`,
+  baseURL: `http://172.16.1.60:8081`,
   timeout: 50000,
 });
 const Service = {

@@ -9,8 +9,13 @@
       text-color="#fff"
       active-text-color="#ffd04b"
     >
-      <el-menu-item v-for="(item,index) of routers" :key="index" :index="index">
-        <router-link v-if="item.path!=='/' && (item.auth.includes(mode))"
+      <el-menu-item
+        v-for="(item,index) of routers"
+        :key="index"
+        :index="index"
+      >
+        <router-link
+          v-if="item.path!=='/' && (item.auth.includes(mode))"
           style="text-decoration:none;height:100%;display:block;width:100%"
           :to="item.path"
         >{{ item.name }}</router-link>
@@ -21,28 +26,32 @@
 </template>
 
 <script>
-import Home from './components/HelloWorld.vue';
+import Home from "./components/HelloWorld.vue";
 
-import { getCurrentInstance, ref } from 'vue';
+import { getCurrentInstance, ref } from "vue";
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    Home
+    Home,
   },
   data() {
     return {
-      mode: process.env.NODE_ENV
-    }
+      mode: process.env.NODE_ENV,
+    };
   },
   setup(props) {
     const { proxy } = getCurrentInstance();
     const r = 10;
     const routers = ref(proxy.$router.options.routes);
+    function printRouters() {
+      console.log(routers);
+    }
     return {
-      routers
+      routers,
+      printRouters
     };
-  }
-}
+  },
+};
 </script>
 
 <style lang="scss">
@@ -59,7 +68,7 @@ export default {
   color: #2c3e50;
   height: 100%;
 }
-li>a {
+li > a {
   padding: 0 20px;
 }
 li {

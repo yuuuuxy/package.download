@@ -74,7 +74,7 @@ export default {
 	@return 2rem;
 }
 html {
-  font-size: 100px;
+  // font-size: 100px;
 }
 
 .nn {

@@ -11,32 +11,32 @@
   </title>
   <script src="../src/total.js"></script>
   <script>
-    let sendMsg = () => {
-      console.log('%c重点输出', 'background:pink;color:white;padding:5px;border:1px dashed pink;border-radius:5px',);
-      ws.send('message');
-    }
-    var ws = new WebSocket('ws://localhost:8001');
-    ws.onopen = function (evt) {
-      console.log('Connection open ...');
-      ws.send('Hello WebSockets!');
-    };
+    // let sendMsg = () => {
+    //   console.log('%c重点输出', 'background:pink;color:white;padding:5px;border:1px dashed pink;border-radius:5px',);
+    //   ws.send('message');
+    // }
+    // var ws = new WebSocket('ws://localhost:8001');
+    // ws.onopen = function (evt) {
+    //   console.log('Connection open ...');
+    //   ws.send('Hello WebSockets!');
+    // };
 
-    ws.onmessage = function (evt) {
-      console.log('Received Message: ' + evt.data);
-    };
+    // ws.onmessage = function (evt) {
+    //   console.log('Received Message: ' + evt.data);
+    // };
 
-    ws.onclose = function (evt) {
-      console.log('Connection closed.');
-    };
-    let timeout = void 0;
-    window.onresize = () => {
-      if(timeout){
-        clearTimeout(timeout);
-      }
-      timeout = setTimeout(() => {
-        console.log('%c重点输出', 'background:pink;color:white;padding:5px;border:1px dashed pink;border-radius:5px',);
-      }, 300);
-    }
+    // ws.onclose = function (evt) {
+    //   console.log('Connection closed.');
+    // };
+    // let timeout = void 0;
+    // window.onresize = () => {
+    //   if(timeout){
+    //     clearTimeout(timeout);
+    //   }
+    //   timeout = setTimeout(() => {
+    //     console.log('%c重点输出', 'background:pink;color:white;padding:5px;border:1px dashed pink;border-radius:5px',);
+    //   }, 300);
+    // }
   </script>
 </head>
 

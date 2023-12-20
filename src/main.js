@@ -4,9 +4,8 @@ import installElementPlus from './plugins/element'
 import Test from './components/Test.vue'
 import HelloWorld from './components/HelloWorld'
 import Normal from './components/Normal'
-import NewOne from './components/main/NewOne'
 
-import { createRouter, createWebHistory } from 'vue-router';
+import { createRouter, createWebHashHistory } from 'vue-router';
 
 const routes = [
   { path:'/',redirect: 'home' },
@@ -16,14 +15,11 @@ const routes = [
   },
   {
     path: '/normal', name: 'Normal', component: Normal, auth: ['development']
-  },
-  {
-    path: '/newone', name: 'NowOne', component: NewOne, auth: ['development']
   }
 ];
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHashHistory(),
   routes
 });
 

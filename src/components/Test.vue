@@ -30,11 +30,11 @@ export default {
 
     },
     toNormal(){
-      this.router.push('/normal',{
-        query:{
-          id:18
-        }
-      })
+      // this.router.push('/normal',{
+      //   query:{
+      //     id:18
+      //   }
+      // })
     }
   },
   mounted() {

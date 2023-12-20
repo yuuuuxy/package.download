@@ -4,6 +4,7 @@
     <el-button v-if="mode" @click="restartNode()" type="primary" plain>start access to new world</el-button>
     <el-button @click="deleteApk()" type="primary" plain>delete apk</el-button>
     <el-button @click="loadFileList()" type="primary" plain>refresh list</el-button>
+    <br />
     <Card v-for="(item,index) of filesNameArray" :key="index" :item="item" @change="onchange">
     </Card>
   </div>

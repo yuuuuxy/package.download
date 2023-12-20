@@ -7,8 +7,7 @@
 export default {
   data:()=>{
     return {
-      obk:'sss',
-      username:'ariel',
+      obk:'sss'
     }
   }
 };
